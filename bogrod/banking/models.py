@@ -81,7 +81,7 @@ class Flow(models.Model):
         flow_sum = (Flow.objects.filter(transaction=self.transaction)
                                 .exclude(pk=self.pk)
                                 .aggregate(Sum('value')))
-        if abs(flow_sum + self.value) > abs(transaction.value):
+        if abs(flow_sum + self.value) > abs(self.transaction.value):
             raise ValidationError("Sum of flows cannot exceed transaction!")
 
 
