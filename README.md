@@ -1,4 +1,4 @@
-## bogrod
+## bogrod [![Build Status](https://travis-ci.org/joostrijneveld/bogrod.svg?branch=master)](https://travis-ci.org/joostrijneveld/bogrod)
 
 > _‘Wait — Bogrod!’_
 
