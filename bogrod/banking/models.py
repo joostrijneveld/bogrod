@@ -5,7 +5,19 @@ from django.core.exceptions import ValidationError
 
 
 class Account(models.Model):
-    iban = models.CharField(_('iban'), max_length=34)
+    iban = models.CharField(_('iban'), max_length=34, unique=True)
+    ACCOUNT_TYPES = (
+        ('checking', 'Checking account'),
+        ('savings', 'Savings account'),
+        # ('investment', 'Investment account'),  # TODO how to differentiate
+        ('secondparty', 'Second party account'),
+        ('other', 'Other account'),
+    )
+    account_type = models.CharField(max_length=10, choices=ACCOUNT_TYPES,
+                                    default='other')
+
+    def __str__(self):
+        return self.iban
 
 
 class Category(models.Model):

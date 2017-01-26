@@ -1,2 +1,5 @@
 Django==1.10.2
 Pillow
+beautifulsoup4
+requests
+lxml
